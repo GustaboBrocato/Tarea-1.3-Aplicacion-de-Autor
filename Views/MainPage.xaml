@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tarea_1._3_Aplicacion_de_Autor.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="">
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Label
+                Margin="0,10,0,10"
+                FontAttributes="Bold"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource Headline}"
+                Text="Tarea 1.3 Aplicacion de Autores" />
+
+            <Label
+                Margin="0,0,0,100"
+                FontAttributes="Bold"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource SubHeadline}"
+                Text="Grupo #3" />
+
+            <Button
+                x:Name="btnAgregar"
+                Margin="0,0,0,10"
+                Clicked="btnAgregar_Clicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Agregar un nuevo Autor"
+                Text="Agregar Autor" />
+
+            <Button
+                x:Name="btnVerAutores"
+                Margin="0,0,0,100"
+                Clicked="btnVerAutores_Clicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Ver Lista de Autores"
+                Text="Ver Autores" />
+
+            <Label
+                Margin="0,0,0,10"
+                FontAttributes="Bold"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource SubHeadline}"
+                Text="Integrantes:" />
+
+            <Label
+                Margin="0,0,0,10"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="JENSY LORENA VILLAFRANCA NAVARRO" />
+
+            <Label
+                Margin="0,0,0,10"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="KENCY ANGELY ROSA PAZ" />
+
+            <Label
+                Margin="0,0,0,10"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="CLAUDIA VERONICA RODRIGUEZ PAZ" />
+
+            <Label
+                Margin="0,0,0,10"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="ALEKS XAVIER PINEDA MACIAS" />
+
+            <Label
+                Margin="0,0,0,10"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="JONATHAN IGNACIO MARLEY RAMIREZ" />
+
+            <Label
+                Margin="0,0,0,10"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="GUSTAVO BROCATO" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

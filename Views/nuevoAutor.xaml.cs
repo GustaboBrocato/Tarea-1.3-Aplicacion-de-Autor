@@ -4,7 +4,9 @@ namespace Tarea_1._3_Aplicacion_de_Autor.Views;
 
 public partial class nuevoAutor : ContentPage
 {
+    //Clase que permite guardar objetos que estan vinculados a un elemento de interface
     ObservableCollection<string> countries;
+
     Controllers.AutorController controller;
     string nacionalidad;
     public nuevoAutor()

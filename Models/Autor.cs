@@ -13,10 +13,10 @@ namespace Tarea_1._3_Aplicacion_de_Autor.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        [MaxLength(255)]
+        [MaxLength(255), NotNull]
         public string? Nombres { get; set; }
 
-        [MaxLength(255)]
+        [MaxLength(255), NotNull]
         public string? Nacionalidad { get; set; }
     }
 }

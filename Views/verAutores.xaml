@@ -3,7 +3,11 @@
     x:Class="Tarea_1._3_Aplicacion_de_Autor.Views.verAutores"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:convert="clr-namespace:Tarea_1._3_Aplicacion_de_Autor.Controllers"
     Title="Lista de Autores">
+    <ContentPage.Resources>
+        <convert:base64Image x:Key="BaseArray" />
+    </ContentPage.Resources>
     <ScrollView>
         <StackLayout>
             <SearchBar
@@ -25,6 +29,7 @@
                                 <ColumnDefinition Width="auto" />
                                 <ColumnDefinition Width="auto" />
                                 <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
                             </Grid.ColumnDefinitions>
 
                             <Label
@@ -32,21 +37,31 @@
                                 Margin="50,0,20,10"
                                 HorizontalOptions="Center"
                                 Text="{Binding Id}"
-                                VerticalOptions="Center" />
+                                VerticalOptions="CenterAndExpand" />
 
-                            <Label
+                            <Image
                                 Grid.Column="1"
-                                Margin="0,0,10,10"
-                                HorizontalOptions="Center"
-                                Text="{Binding Nombres}"
-                                VerticalOptions="Center" />
+                                Margin="0,0,0,0"
+                                Aspect="AspectFill"
+                                HeightRequest="100"
+                                HorizontalOptions="FillAndExpand"
+                                Source="{Binding Foto, Converter={StaticResource BaseArray}}"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="100" />
 
                             <Label
                                 Grid.Column="2"
+                                Margin="10,0,10,10"
+                                HorizontalOptions="Center"
+                                Text="{Binding Nombres}"
+                                VerticalOptions="CenterAndExpand" />
+
+                            <Label
+                                Grid.Column="3"
                                 Margin="0,0,20,10"
                                 HorizontalOptions="Center"
                                 Text="{Binding Nacionalidad, StringFormat='({0})'}"
-                                VerticalOptions="Center" />
+                                VerticalOptions="CenterAndExpand" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

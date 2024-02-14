@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tarea_1._3_Aplicacion_de_Autor.Views.pageMapas"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
+    xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
+    Title="pageMapas">
+    <StackLayout Orientation="Vertical">
+        <Label
+            HorizontalOptions="Center"
+            Text="Mapas"
+            VerticalOptions="Center" />
+        <maps:Map
+            x:Name="mapa"
+            IsShowingUser="True"
+            MapClicked="OnMapTapped">
+            <maps:Map.Pins>
+                <!--  Pins will be added dynamically in code-behind  -->
+            </maps:Map.Pins>
+        </maps:Map>
+    </StackLayout>
+</ContentPage>

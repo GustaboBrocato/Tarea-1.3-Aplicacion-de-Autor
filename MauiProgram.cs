@@ -13,8 +13,11 @@ namespace Tarea_1._3_Aplicacion_de_Autor
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                })
+            .UseMauiMaps();
+
             builder.Services.AddSingleton<Controllers.AutorController>();
+            
 
 #if DEBUG
             builder.Logging.AddDebug();

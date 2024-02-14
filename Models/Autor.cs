@@ -18,5 +18,6 @@ namespace Tarea_1._3_Aplicacion_de_Autor.Models
 
         [MaxLength(255), NotNull]
         public string? Nacionalidad { get; set; }
+        public string? Foto { get; set; }
     }
 }

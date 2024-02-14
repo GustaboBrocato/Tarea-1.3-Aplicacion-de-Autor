@@ -41,6 +41,13 @@
                 HorizontalOptions="Center"
                 SemanticProperties.Hint="Ver Lista de Autores"
                 Text="Ver Autores" />
+            <Button
+                x:Name="btnMapas"
+                Margin="0,0,0,100"
+                Clicked="btnMapas_Clicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Mapas"
+                Text="Mapas" />
 
             <Label
                 Margin="0,0,0,10"

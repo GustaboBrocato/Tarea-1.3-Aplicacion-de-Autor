@@ -8,6 +8,8 @@ public partial class nuevoAutor : ContentPage
     ObservableCollection<string> countries;
 
     Controllers.AutorController controller;
+    FileResult photo; //Para tomar foto
+
     string nacionalidad;
     public nuevoAutor()
     {
@@ -54,6 +56,42 @@ public partial class nuevoAutor : ContentPage
         countryPicker.ItemsSource = countries;
     }
 
+    public string? GetImg64()
+    {
+        if(photo != null)
+        {
+            using(MemoryStream ms = new MemoryStream())
+            {
+                Stream stream = photo.OpenReadAsync().Result;
+                stream.CopyTo(ms);
+                byte[] data = ms.ToArray();
+
+                String Base64 = Convert.ToBase64String(data);
+
+                return Base64;   
+            }
+        }
+        return null;
+    }
+
+    public byte[]? GetImageArray()
+    {
+        if (photo != null)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                Stream stream = photo.OpenReadAsync().Result;
+                stream.CopyTo(ms);
+                byte[] data = ms.ToArray();
+
+                
+
+                return data;
+            }
+        }
+        return null;
+    }
+
     private void countryPicker_SelectedIndexChanged(object sender, EventArgs e)
     {
         nacionalidad = countryPicker.SelectedItem as string;
@@ -77,7 +115,8 @@ public partial class nuevoAutor : ContentPage
         var autor = new Models.Autor
         {
             Nombres = txtNombres.Text,
-            Nacionalidad = nacionalidad
+            Nacionalidad = nacionalidad,
+            Foto = GetImg64()
         };
 
         try
@@ -104,5 +143,21 @@ public partial class nuevoAutor : ContentPage
     private void btnRegresar_Clicked(object sender, EventArgs e)
     {
         Navigation.PopAsync();
+    }
+
+    private async void btnfoto_Clicked(object sender, EventArgs e)
+    {
+        photo = await MediaPicker.CapturePhotoAsync();
+
+        if (photo != null)
+        {
+            string photoPath = Path.Combine(FileSystem.CacheDirectory, photo.FileName);
+            using Stream sourcephoto = await photo.OpenReadAsync();
+            using FileStream streamlocal = File.OpenWrite(photoPath);
+
+            imgFoto.Source = ImageSource.FromStream(() => photo.OpenReadAsync().Result); //Para verla dentro de archivo
+
+            await sourcephoto.CopyToAsync(streamlocal); //Para Guardarla local
+        }
     }
 }

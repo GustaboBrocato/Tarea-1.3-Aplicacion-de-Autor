@@ -19,6 +19,11 @@ namespace Tarea_1._3_Aplicacion_de_Autor
         {
             Navigation.PushAsync(new nuevoAutor());
         }
+
+        private void btnMapas_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Views.pageMapas());
+        }
     }
 
 }
